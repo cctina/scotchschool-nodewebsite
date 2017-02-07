@@ -1,32 +1,16 @@
-// // Import http module
-// const http = require('http');
-
-// // handle requests/responses
-// var handleRequest = function (request, response) {
-// 	// Return a string
-// 	response.end('Hello world!');
-// };
-
-// // Create http server
-// const server = http.createServer(handleRequest);
-
-// // Start server & listen to port xxx
-// server.listen(8080, function () {
-// 	console.log('Listen to port 8080');
-// });
-
-//////////////////// EXPRESS /////////////////////////
-
+// Request our dependencies
 const express = require('express');
 const app = express();
+const router = require('./app/routes');
+
+// Configuration
 const PORT = 8080;
+
+// Route our app
+app.use('/', router);
 
 // Start the server 
 app.listen(PORT, function () {
 	console.log('app started');
 });
 
-// Route our app
-app.get('/', function (req, res) {
-	res.send('Hello world!');
-})
