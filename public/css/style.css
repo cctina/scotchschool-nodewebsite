@@ -1,0 +1,58 @@
+body {
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+header .navbar {
+	border-radius: 0;
+	margin: 0;
+}
+
+.hero {
+	background-image: url('../img/background-green.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	padding: 50px 0;
+	min-height: 500px;
+	position: relative;
+}
+
+.hero-content {
+	position: absolute;
+	top: 40%;
+	text-align: center;
+	width: 100%;
+}
+
+.hero-content h2 {
+	color: #fff;
+	font-size: 80px;
+	text-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+	color: #eee;
+	font-size: 30px;
+	margin-bottom: 20px;	
+	text-shadow: 2px 2px 3px rgba(0,0,0,0.5);
+}
+
+.hero-content .btn {
+	border-radius: 2px;
+	padding: 15px 30px;
+	margin: 0 10px;
+}
+
+.main {
+	min-height: 500px;
+	padding: 50px 0;
+}
+
+footer {
+	padding: 20px 0;
+	font-size: 14px;
+	color: #bbb;
+	background-color: #222;
+	text-align: center;
+}

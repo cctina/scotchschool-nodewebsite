@@ -84,8 +84,24 @@ A good tool! Makes live changes without server restarted! (Only for development,
 	3. Export the router object as a module (for server.js using)
 		- `module.export = router;`
 
----
 ## <span id='5'>5. Creating our Views<span>
+### route.js
+1. `require('path');` 
+	- Require another module *path*.
+2. `res.sendFile( path.join( __dirname, '../index.html') );` 
+	- Set `.sendFile()` instead of `.send()`. To send a html file or other files.
+	- Use `path.join()` to set the file path.
+	- `__dirname` ?? 
+### server.js
+1. `app.use(express.static(__dirname + '/public'));`
+	- Set the location of stactic directory by `app.use()`
+	- Give the **static** directory path by `express.static()`
+	- `__dirname` ??
+
+### index.html
+- Implement the homepage with Bootstrap CSS.
+
+---
 ## <span id='6'>6. Templating with EJS<span>
 ## <span id='7'>7. Passing Data to Views<span>
 ## <span id='8'>8. Form Routing<span>
