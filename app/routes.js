@@ -27,10 +27,11 @@ router.get('/about', function (req, res) {
 
 // Route for our contact page
 router.get('/contact', function (req, res) {
-	// res.send("Hey, welcome to contact me!");
-	// res.sendFile(path.join(__dirname, '../contact.html'));
 	res.render('pages/contact');
 });
 router.post('/contact', function (req, res) {
-	
+	res.send("Thanks for contacting us, " + req.body.name + ". We will respond shortly!")
+	console.log(req.body.name);
+	console.log(req.body.email);
+	console.log(req.body.message);
 });

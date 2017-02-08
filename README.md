@@ -6,8 +6,8 @@
 4. [Node Directory Structure](#4)
 5. [Creating our Views](#5)
 6. [Templating with EJS](#6)
-7. [Passing Data to Views]
-8. [Form Routing]
+7. [Passing Data to Views](#7)
+8. [Form Routing](#8)
 9. [Credit](#credit)
 
 ## <span id='1'>1. Getting started<span>
@@ -104,7 +104,7 @@ A good tool! Makes live changes without server restarted! (Only for development,
 
 ## <span id='6'>6. Templating with EJS<span>
 ### Use Templating Tools: EJS / Express Layouts
-#### cmd
+#### npm cmd
 1. `npm install ejs --save`: 
 	- Install EJS by npm.
 2. `npm install express-ejs-layouts --save`
@@ -137,7 +137,6 @@ A good tool! Makes live changes without server restarted! (Only for development,
  	- ie. `index.ejs`
 	- `<%- contentFor(<block_name>) %>` => Codes after this syntax will fill into where the block defined.
 
----
 ## <span id='7'>7. Passing Data to Views<span>
 ### Pass Data Through the Router
 1. Pass data (JS object) from router.js to pages through `res.render(<file_path>, <data>)`.
@@ -151,8 +150,26 @@ A good tool! Makes live changes without server restarted! (Only for development,
 		<% } %> 
 
 ## <span id='8'>8. Form Routing<span>
+### Use Data Parsing Tool: body-parser
 
----
+#### npm cmd
+1. `npm install body-parser --save`
+	- Install module *body-parser* by using npm.
+
+#### server.js
+1. `require('body-parser')`
+	- Require module body-parser
+2. `app.use(bodyParser.urlencoded())`
+	- Use the body-parser's function `.urlencoded()` to parse the encoded files.
+
+#### router.js
+1. For testing: `console.log(req.body.message)`
+	- Will receive data from contact page. Try to log messages from POST request of contact page.
+2. For real: check `req.body` and respond.
+	- Get data from `req.body`, like `req.body.name`, `req.body.email`, `req.body.message`.
+	- Respond something to user, ie. giving some flash messages. ([How to send flash messages in nodejs? [SOLVED]](https://school.scotch.io/lounge/node/how-to-send-flash-messages-in-nodejs?page=1#post-4))	-
+
+
 ## <span id="credit">Credit<span>
 ### Photo
 1. `public/img/background-green.jpg`
