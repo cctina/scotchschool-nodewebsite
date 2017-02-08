@@ -10,16 +10,19 @@ module.exports = router;
 
 // Route for our homepage
 router.get('/', function (req, res) {
-	// res.send('Hello world!');
-	// res.sendFile(path.join(__dirname, '../index.html'));
 	res.render('pages/index');
 })
 
 // Route for our about page
 router.get('/about', function (req, res) {
-	// res.send("Hi! It's an about page!");
-	// res.sendFile(path.join(__dirname, '../about.html'));
-	res.render('pages/about');
+	var users = [ 
+		{ name: "Holly", email: "holly@gmail.com", avatar: "http://placekitten.com/1000/1000" }, 
+		{ name: "Eric",  email: "eric@gmail.com",  avatar: "http://placekitten.com/1100/1100" }, 
+		{ name: "Alice", email: "alice@gmail.com", avatar: "http://placekitten.com/700/700" }, 
+		{ name: "Ado",   email: "ado@gmail.com",   avatar: "http://placekitten.com/800/800" }
+	];
+
+	res.render('pages/about', { users: users });
 });
 
 // Route for our contact page

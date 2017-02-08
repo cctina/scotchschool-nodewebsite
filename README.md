@@ -117,14 +117,17 @@ A good tool! Makes live changes without server restarted! (Only for development,
 #### .html => .ejs
 1. Change all `.html` files extension to `.ejs`. 
 2. Move all `.ejs` files to `/views/pages`.
-3. Create a layoute file `layout.ejs` as a template for common elements between pages, and put the layout file under `/views`.
-	- **Directory structure**
-		- /views
-			- /pages
-				- index.ejs
-				- about.ejs
-				- contact.ejs
-			- **layout.ejs**
+3. Create a layoute file `layout.ejs` as a template for common elements between pages, and put the layout file under `/views`. => **Without any setting??**
+	
+	**Directory structure**
+	
+		/views
+			/pages
+		  		index.ejs
+		  		about.ejs
+		  		contact.ejs
+			layout.ejs
+
 4. Set template commone content. Define where should be filled with customized tags. 
 	- ie. `layout.ejs`
 	- Reusable content keep in `layout.ejs`.
@@ -136,6 +139,17 @@ A good tool! Makes live changes without server restarted! (Only for development,
 
 ---
 ## <span id='7'>7. Passing Data to Views<span>
+### Pass Data Through the Router
+1. Pass data (JS object) from router.js to pages through `res.render(<file_path>, <data>)`.
+
+		res.render('/pages/about', { users: users });
+
+2. Represent data by using EJS functions. Note that there are different notations between `<%`, `<%=` and `<%-`.
+	
+		<% for (user of users) { %> 
+		<h2><%= user.name %></h2>
+		<% } %> 
+
 ## <span id='8'>8. Form Routing<span>
 
 ---
