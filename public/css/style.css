@@ -39,12 +39,12 @@ header .navbar {
 }
 
 .hero-content .btn {
-	border-radius: 2px;
+	border-radius: 5px;
 	padding: 15px 30px;
 	margin: 0 10px;
 }
 
-.main {
+main {
 	min-height: 500px;
 	padding: 50px 0;
 }

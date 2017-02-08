@@ -4,10 +4,11 @@
 2. [Creating our First Server](#2)
 3. [Using Express and Nodemon](#3)
 4. [Node Directory Structure](#4)
-5. [Creating our Views]
-6. [Templating with EJS]
+5. [Creating our Views](#5)
+6. [Templating with EJS](#6)
 7. [Passing Data to Views]
 8. [Form Routing]
+9. [Credit](#credit)
 
 ## <span id='1'>1. Getting started<span>
 
@@ -101,7 +102,46 @@ A good tool! Makes live changes without server restarted! (Only for development,
 ### index.html
 - Implement the homepage with Bootstrap CSS.
 
----
 ## <span id='6'>6. Templating with EJS<span>
+### Use Templating Tools: EJS / Express Layouts
+#### cmd
+1. `npm install ejs --save`: 
+	- Install EJS by npm.
+2. `npm install express-ejs-layouts --save`
+	- Install Express EJS Layout**s** by npm.
+#### server.js
+1. `require('express-ejs-layouts')`
+	- Require EJS & express layouts
+2. `app.set()` & `app.use()`
+	- Use the installed modules
+#### .html => .ejs
+1. Change all `.html` files extension to `.ejs`. 
+2. Move all `.ejs` files to `/views/pages`.
+3. Create a layoute file `layout.ejs` as a template for common elements between pages, and put the layout file under `/views`.
+	- **Directory structure**
+		- /views
+			- /pages
+				- index.ejs
+				- about.ejs
+				- contact.ejs
+			- **layout.ejs**
+4. Set template commone content. Define where should be filled with customized tags. 
+	- ie. `layout.ejs`
+	- Reusable content keep in `layout.ejs`.
+	- `<%- defineContent(<block_name>) %>` => use `defineContet()`
+	- `<%- <block_name_after_1st_one> %>` => name it directly. ie. `<%- body %>`
+5. Set page customizing content. 
+ 	- ie. `index.ejs`
+	- `<%- contentFor(<block_name>) %>` => Codes after this syntax will fill into where the block defined.
+
+---
 ## <span id='7'>7. Passing Data to Views<span>
 ## <span id='8'>8. Form Routing<span>
+
+---
+## <span id="credit">Credit<span>
+### Photo
+1. `public/img/background-green.jpg`
+	- Source: [PEXELS](https://www.pexels.com/photo/brick-wall-bricks-bright-leaves-227396/)
+	- Photographer: [Dom J](https://www.pexels.com/u/dom-j-7304/)
+	- License: [CC0](https://www.pexels.com/photo-license/)
